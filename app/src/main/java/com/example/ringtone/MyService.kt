@@ -4,30 +4,15 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.media.Ringtone
 import android.media.RingtoneManager
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat
 
 class MyService : Service() {
     private val RINGTONE_ID = "ForegroundService Kotlin"
-
-    companion object {
-        fun startService(context: Context, message: String) {
-            val startIntent = Intent(context, MyService::class.java)
-            startIntent.putExtra("inputExtra", message)
-            ContextCompat.startForegroundService(context, startIntent)
-        }
-
-        fun stopService(context: Context) {
-            val stopIntent = Intent(context, MyService::class.java)
-            context.stopService(stopIntent)
-        }
-    }
 
     private var player: Ringtone? = null
 
