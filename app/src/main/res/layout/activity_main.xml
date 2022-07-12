@@ -26,4 +26,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Start" />
 
+    <Button
+        android:id="@+id/btn_SendCustomBroadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Send Custom Broadcast"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Stop" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

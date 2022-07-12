@@ -15,9 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val intent = Intent(this, MyService::class.java)
         binding.btnStart.setOnClickListener {
-            intent.putExtra("inputExtra", "")
+            intent.putExtra(Instance.PUT_EXTRA_KEY, "")
             this.startService(intent)
         }
 
@@ -29,11 +30,19 @@ class MainActivity : AppCompatActivity() {
         IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
             registerReceiver(receiver, it)
         }
+
+        binding.btnSendCustomBroadcast.setOnClickListener {
+            val intent1 = Intent("com.example.ringtone_SEND_RECEIVER")
+            intent1.putExtra(
+                "com.example.ringtone_EXTRA_DATA",
+                "Send data use Custom Broadcast Receiver"
+            )
+            sendBroadcast(intent1)
+        }
     }
 
     override fun onStop() {
         super.onStop()
-        unregisterReceiver(receiver)
+        this.unregisterReceiver(receiver)
     }
-
 }

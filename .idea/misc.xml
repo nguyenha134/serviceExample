@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/LearnKotlin/RingTone/app/src/main/res/layout/activity_main.xml" value="0.22282608695652173" />
+        <entry key="..\:/LearnKotlin/RingTone/app/src/main/res/layout/activity_main.xml" value="0.14285714285714285" />
+        <entry key="..\:/LearnKotlin/RingTone/app/src/main/res/layout/activity_receiver.xml" value="0.1" />
+        <entry key="..\:/LearnKotlin/RingTone/app/src/main/res/layout/activity_test_broad_cast.xml" value="0.11347517730496454" />
+        <entry key="..\:/LearnKotlin/RingTone/app/src/main/res/layout/activity_test_broadcast.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

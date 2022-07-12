@@ -20,13 +20,9 @@ class MyService : Service() {
         return null
     }
 
-    override fun onCreate() {
-        super.onCreate()
-    }
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         startRingTone()
-        val input = intent?.getStringExtra("inputExtra")
+        val input = intent?.getStringExtra(Instance.PUT_EXTRA_KEY)
         createNotificationChannel()
         val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
@@ -40,7 +36,7 @@ class MyService : Service() {
             .setContentIntent(pendingIntent)
             .build()
         startForeground(1, notification)
-        return START_NOT_STICKY
+        return START_STICKY
     }
 
     private fun createNotificationChannel() {
