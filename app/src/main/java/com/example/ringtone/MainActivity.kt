@@ -27,9 +27,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         receiver = AirplaneModeChangeReceiver()
-        IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
-            registerReceiver(receiver, it)
-        }
+        val intent2 = IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED)
+        registerReceiver(receiver, intent2)
 
         binding.btnSendCustomBroadcast.setOnClickListener {
             val intent1 = Intent("com.example.ringtone_SEND_RECEIVER")
@@ -41,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-        this.unregisterReceiver(receiver)
+    override fun onDestroy() {
+        super.onDestroy()
+        //        this.unregisterReceiver(receiver)
     }
 }
